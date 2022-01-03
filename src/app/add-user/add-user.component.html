@@ -1,0 +1,83 @@
+<div style="text-align: center;">
+  <h3>User Registration</h3> 
+</div>
+
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="usersaveform" (ngSubmit)="onSubmit()">  
+          <div class="form-group">  
+              <label for="FirstName">First Name</label>  
+              <input type="text" class="form-control"  formControlName="firstName" data-toggle="tooltip"   
+                 data-placement="right" title="Enter First Name" >  
+              <div class="alert alert-danger" *ngIf = "(UserFirstName?.touched) && (UserFirstName?.invalid)"   
+                style="margin-top: 5px;">  
+                   <span *ngIf="UserFirstName?.errors?.['required']">First Name is Required</span>  
+                    <span *ngIf = "UserFirstName?.errors?.['MinLength']">   
+                        MinLength Error   
+                    </span>                      
+                </div>  
+          </div>
+          
+          <div class="form-group">  
+            <label for="LastName">Last Name</label>  
+            <input type="text" class="form-control"  formControlName="lastName" data-toggle="tooltip"   
+               data-placement="right" title="Enter Last Name" >  
+            <div class="alert alert-danger" *ngIf = "(UserLastName?.touched) && (UserLastName?.invalid)"   
+              style="margin-top: 5px;">  
+                 <span *ngIf="UserLastName?.errors?.['required']">Last Name is Required</span>  
+                  <span *ngIf = "UserLastName?.errors?.['MinLength']">   
+                      MinLength Error   
+                  </span>                      
+              </div>  
+        </div>
+
+        <div class="form-group">  
+            <label for="DOB">Date of Birth</label>  
+            <input type="date" class="form-control"  formControlName="dateOfBirth" data-toggle="tooltip"   
+               data-placement="right" title="Date of Birth" >  
+            <div class="alert alert-danger" *ngIf = "(UserDOB?.touched) && (UserDOB?.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="UserDOB?.errors?.['required']">Date of Birth is Required</span>
+                  <span *ngIf = "UserDOB?.errors?.['MinLength']">   
+                      MinLength Error   
+                  </span>                    
+              </div>  
+        </div>
+
+        <div class="form-group">  
+            <label for="JoiningDate">Date of Joining</label>  
+            <input type="date" class="form-control"  formControlName="joiningDate" data-toggle="tooltip"   
+               data-placement="right" title="Date of Joining" >  
+            <div class="alert alert-danger" *ngIf = "(UserJoiningDate?.touched) && (UserJoiningDate?.invalid)"   
+              style="margin-top: 5px;">  
+                 <span *ngIf="UserJoiningDate?.errors?.['required']">Date of Joining is Required</span>
+                  <span *ngIf = "UserJoiningDate?.errors?.['MinLength']">   
+                      MinLength Error   
+                  </span>                      -->
+              </div>  
+        </div>
+
+        <div class="form-group">  
+            <label for="Pincode">Pincode</label>  
+            <input type="text" class="form-control"  formControlName="pincode" data-toggle="tooltip"   
+               data-placement="right" title="Pincode" >  
+            <div class="alert alert-danger" *ngIf = "(UserPincode?.touched) && (UserPincode?.invalid)"   
+              style="margin-top: 5px;">  
+                 <span *ngIf="UserPincode?.errors?.['required']">Pincode is Required</span>
+                  <span *ngIf = "UserPincode?.errors?.['MinLength']">   
+                      MinLength Error   
+                  </span>                      
+              </div>  
+        </div>
+    
+          
+          <button type="submit" class="btn btn-success">Submit</button> 
+          <button (click)="addUserForm()" class='btn btn-primary'style="margin-left: 10px">Back to User List</button>  
+            
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>    
